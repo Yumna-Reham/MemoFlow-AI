@@ -1,0 +1,141 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    /* Workspace Color System */
+    --bg-workspace: #F8F9FE;
+    --fg-workspace: #0F172A;
+    
+    /* Landing Page Color System */
+    --bg-landing: #090C15;
+    --fg-landing: #F8FAFC;
+  }
+
+  body {
+    background-color: var(--bg-workspace);
+    color: var(--fg-workspace);
+    font-family: var(--font-sans), system-ui, -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', Roboto, sans-serif;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+.font-landing {
+  font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
+}
+
+@theme {
+  --color-memobg: #F8F9FE;
+  --color-memocard: #FFFFFF;
+  --color-memoprimary: #8B5CF6;
+  --color-memosecondary: #6366F1;
+  --color-memoaccent: #06B6D4;
+  --color-memopink: #EC4899;
+  --color-memotext: #0F172A;
+  --color-memotextsec: #64748B;
+  --color-memoborder: #E2E8F0;
+  --color-memosuccess: #10B981;
+  --color-memowarning: #F59E0B;
+  --color-memodanger: #F43F5E;
+
+  /* Landing Hero Colors */
+  --color-hero-bg: #090C15;
+  --color-hero-card: rgba(15, 23, 42, 0.65);
+  --color-hero-border: rgba(255, 255, 255, 0.08);
+
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-float-delayed: float-delayed 8s ease-in-out infinite;
+  --animate-orbit-slow: orbit 25s linear infinite;
+  --animate-pulse-glow: pulse-glow 4s ease-in-out infinite;
+  --animate-aurora: aurora 15s ease infinite alternate;
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-10px) rotate(1deg); }
+  }
+  @keyframes float-delayed {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(10px) rotate(-1deg); }
+  }
+  @keyframes orbit {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+  @keyframes pulse-glow {
+    0%, 100% { 
+      box-shadow: 0 0 25px rgba(139, 92, 246, 0.35), 0 0 50px rgba(6, 182, 212, 0.15);
+      transform: scale(1);
+    }
+    50% { 
+      box-shadow: 0 0 55px rgba(139, 92, 246, 0.6), 0 0 90px rgba(236, 72, 153, 0.3);
+      transform: scale(1.03);
+    }
+  }
+  @keyframes aurora {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+}
+
+/* Glassmorphism Systems */
+.glass-nav {
+  background: rgba(9, 12, 21, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-card-dark {
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+}
+
+.glass-card-light {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.03);
+}
+
+.glass-card-light:hover {
+  border-color: rgba(139, 92, 246, 0.3);
+  box-shadow: 0 20px 40px rgba(139, 92, 246, 0.08);
+}
+
+/* Scrollbar Customization */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
+
+/* Utility to suppress horizontal overflows */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
